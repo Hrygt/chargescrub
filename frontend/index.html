@@ -55,9 +55,39 @@
                         <path d="M9 15l3-3 3 3"/>
                     </svg>
                     <p style="margin: 0 0 8px; font-weight: 500;">Drop Excel file here</p>
-                    <p class="small muted" style="margin: 0;">or click to browse</p>
+                    <p class="small muted" style="margin: 0;">or click to browse (.xlsx)</p>
                     <input type="file" id="fileInput" accept=".xlsx,.xls" style="display: none;">
                 </div>
+                
+                <!-- Format Requirements -->
+                <details style="margin-top: 12px; font-size: 0.85rem;">
+                    <summary style="cursor: pointer; color: var(--muted); user-select: none;">
+                        <span style="color: var(--ink); font-weight: 500;">Required columns</span> — click to view format
+                    </summary>
+                    <div style="margin-top: 10px; padding: 12px; background: var(--slate-50); border-radius: 8px; border: 1px solid var(--border);">
+                        <table style="width: 100%; font-size: 0.8rem; border-collapse: collapse;">
+                            <tr>
+                                <td style="padding: 4px 8px; font-weight: 600; width: 40%;">PATIENT NAME</td>
+                                <td style="padding: 4px 8px; color: var(--muted);">Patient identifier</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td style="padding: 4px 8px; font-weight: 600;">DATE OF SERVICE</td>
+                                <td style="padding: 4px 8px; color: var(--muted);">Service date</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 4px 8px; font-weight: 600;">PROCEDURECODE</td>
+                                <td style="padding: 4px 8px; color: var(--muted);">E/M CPT code (99221-99239, 99291, 99497, 99499)</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td style="padding: 4px 8px; font-weight: 600;">BILLINGPROVIDER</td>
+                                <td style="padding: 4px 8px; color: var(--muted);">Provider name</td>
+                            </tr>
+                        </table>
+                        <p style="margin: 10px 0 0; font-size: 0.75rem; color: var(--muted);">
+                            Column names must match exactly. Additional columns are preserved in output.
+                        </p>
+                    </div>
+                </details>
                 
                 <div id="fileInfo" class="file-info" style="display: none;">
                     <div class="file-icon">
